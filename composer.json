@@ -1,6 +1,6 @@
 {
     "name": "stechstudio/laravel-infisical",
-    "description": ":package_description",
+    "description": "Import your Infisical applications secrets as Laravel environment variables.",
     "keywords": [
         "laravel","secrets","infisical","env","environment"
     ],
