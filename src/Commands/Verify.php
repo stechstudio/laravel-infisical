@@ -15,23 +15,25 @@ class Verify extends Command
 
     public function handle()
     {
+        $environment = Infisical::environment($this->argument('env'));
+
         $result = Process::run(array_filter([
             'infisical',
             'secrets',
             'get',
             'APP_KEY',
             '--plain',
-            "--env=".Infisical::environment($this->argument('env')),
+            "--env=$environment",
             config('infisical.token') ? "--token=".config('infisical.token') : null,
         ]));
 
         if ($result->successful() && !empty($result->output())) {
-            $this->info('Successfully connected to Infisical and retrieved APP_KEY.');
+            $this->info("Successfully connected to Infisical and retrieved APP_KEY from '$environment' environment.");
             return 0;
         }
 
         if ($result->successful() && empty($result->output())) {
-            $this->warn('Successfully connected to Infisical but APP_KEY appears to be missing. Ensure APP_KEY is set in your Infisical environment.');
+            $this->warn("Successfully connected to Infisical '$environment' environment, but APP_KEY appears to be missing. Ensure APP_KEY is set.");
             return 1;
         }
 

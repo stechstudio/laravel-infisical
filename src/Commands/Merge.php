@@ -25,7 +25,7 @@ class Merge extends Command
         ]));
 
         if (!$result->successful()) {
-            $this->error('Failed to export environment variables from Infisical.');
+            $this->error('Failed to export secrets from Infisical.');
             $this->error($result->errorOutput());
             return 1;
         }
@@ -48,6 +48,6 @@ class Merge extends Command
 
         file_put_contents(base_path('.env'), $output);
 
-        $this->info("Environment [$environment] variables merged successfully.");
+        $this->info("Environment [$environment] secrets merged successfully.");
     }
 }
