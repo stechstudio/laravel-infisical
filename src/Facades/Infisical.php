@@ -3,14 +3,15 @@
 namespace STS\Infisical\Facades;
 
 use Illuminate\Support\Facades\Facade;
+use STS\Infisical\InfisicalManager;
 
 /**
- * @see \STS\Infisical\InfisicalManager
+ * @mixin InfisicalManager
  */
 class Infisical extends Facade
 {
     protected static function getFacadeAccessor(): string
     {
-        return \STS\Infisical\InfisicalManager::class;
+        return InfisicalManager::class;
     }
 }
