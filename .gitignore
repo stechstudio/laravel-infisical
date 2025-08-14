@@ -1,0 +1,66 @@
+# Composer
+/vendor/
+composer.lock
+
+# IDE and Editor files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+.project
+.settings/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Testing
+.phpunit.result.cache
+.phpunit.cache/
+phpunit.xml
+.env.testing
+coverage/
+build/
+
+# Laravel specific
+.env
+.env.backup
+.env.production
+
+# Node (if using any build tools)
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Build artifacts
+/dist/
+/build/
+
+# Documentation build
+/docs/_build/
+/docs/.build/
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Desktop.ini
+
+# Logs
+*.log
+logs/
+
+# Cache
+.cache/
+*.cache
+
+# Temporary files
+*.tmp
+.temp/
+tmp/
