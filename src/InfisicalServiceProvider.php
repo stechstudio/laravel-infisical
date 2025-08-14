@@ -11,6 +11,10 @@ class InfisicalServiceProvider extends PackageServiceProvider
     {
         $package
             ->name('infisical')
-            ->hasConfigFile();
+            ->hasConfigFile()
+            ->hasCommands([
+                Commands\Verify::class,
+                Commands\Merge::class,
+            ]);
     }
 }
