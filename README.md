@@ -1,4 +1,4 @@
-# Laravel Infisical Secrets
+<img width="1492" height="676" alt="infisical-banner" src="https://github.com/user-attachments/assets/90534b28-65ff-4376-87fc-679d04161de3" />
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/stechstudio/laravel-infisical.svg?style=flat-square)](https://packagist.org/packages/stechstudio/laravel-infisical)
 
