@@ -2,7 +2,7 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/stechstudio/laravel-infisical.svg?style=flat-square)](https://packagist.org/packages/stechstudio/laravel-infisical)
 
-[Infisical](https://infisical.com/)  helps you securely manage application secrets and share them with your team. This package integrates Infisical with Laravel, exporting secrets as environment variables.
+[Infisical](https://infisical.com/) is an all-in-one platform to securely manage application secrets and share them with your team. This package integrates Infisical with Laravel, exporting secrets as environment variables.
 
 - Leverages the [Infisical CLI](https://docs.infisical.com/cli/installation) to fetch and export secrets.
 - Merges secrets onto your base `.env` file (optional).
@@ -15,7 +15,7 @@
 This assumes you have a working Infisical account and have created a project with secrets.
 
 1. Install the Infisical CLI tool on your device by following the instructions at [Infisical CLI Installation](https://docs.infisical.com/cli/installation).
-2. Run `infisical login` to authenticate your CLI with your Infisical account.
+2. Run `infisical login` to authenticate.
 3. Run `infisical init` to select the project and generate the `.infisical.json` file. We recommend committing this file to your repository.
 
 ### 2. Install this package
