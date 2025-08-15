@@ -22,6 +22,7 @@ class Merge extends Command
             'export',
             "--env=$environment",
             config('infisical.token') ? "--token=".config('infisical.token') : null,
+            config('infisical.project_id') ? "--projectId=".config('infisical.project_id') : null,
         ]));
 
         if (!$result->successful()) {

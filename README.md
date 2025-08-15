@@ -12,13 +12,34 @@
 
 ### 1. Set up Infisical
 
-This assumes you have a working Infisical account and have created a project with secrets.
+- Set up an Infisical account if you haven't already. Create a project with secrets.
+- Install the Infisical CLI tool on your device by following the instructions at [Infisical CLI Installation](https://docs.infisical.com/cli/installation).
 
-1. Install the Infisical CLI tool on your device by following the instructions at [Infisical CLI Installation](https://docs.infisical.com/cli/installation).
-2. Run `infisical login` to authenticate.
-3. Run `infisical init` to select the project and generate the `.infisical.json` file. We recommend committing this file to your repository.
+### 2. Authenticate and configure your project
 
-### 2. Install this package
+You can authenticate and configure your project in one of two ways:
+
+- **Login with identity**:
+
+  Run [`infisical login`](https://infisical.com/docs/cli/commands/login) to authenticate with a user identity or a machine identity. 
+
+  Then run [`infisical init`](https://infisical.com/docs/cli/commands/init) to select the project and generate the `.infisical.json` file. We recommend committing this file to your repository.
+
+
+- **Use a service token**:
+
+  Create a Service Token scoped for your designed environment.
+
+  Copy your specific Project ID from your Infisical settings page.
+
+    Set the following environment variables in your base `.env` file:
+    
+     ```dotenv
+     INFISICAL_PROJECT_ID=your-project-id
+     INFISICAL_TOKEN=your-service-token
+     ```
+
+### 3. Install this package
 
 You know the drill:
 
@@ -26,14 +47,14 @@ You know the drill:
 composer require stechstudio/laravel-infisical
 ```
 
-### 3. Specify your environment
+### 4. Specify your environment
 
 Infisical needs to know which environment to pull secrets from. You can do this one of three ways:
 
-- **Environment Variable**: Set the `INFISICAL_ENV` environment variable in a base `.env` file to the desired environment slug. 
+- **Environment Variable**: Set the `INFISICAL_ENVIRONMENT` environment variable in a base `.env` file to the desired environment slug. 
 
    ```dotenv
-   INFISICAL_ENV=prod
+   INFISICAL_ENVIRONMENT=prod
    ```
 - **CLI Argument**: Pass the `--env` option when running the Artisan command.
 
@@ -54,7 +75,7 @@ Infisical needs to know which environment to pull secrets from. You can do this 
 > [!IMPORTANT]  
 > You must provide the _slug_ of an existing environment. See your project Settings > Secrets Management page to view all your environments and slugs.
 
-### 4. Run the command (manually or automatically)
+### 5. Run the command (manually or automatically)
 
 You can run the command manually to merge secrets into your `.env` file, or add it to your deployment scripts.
 
@@ -70,7 +91,7 @@ You can also add this to the `scripts` section of your `composer.json` file. Thi
 ],
 ```
 
-### 5. Profit!
+### 6. Profit!
 
 You should see "Environment [prod] variables merged successfully". If you look at your `.env` file you should see that all the secrets from Infisical have been added to it.
 
